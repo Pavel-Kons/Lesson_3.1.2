@@ -16,6 +16,12 @@ public class UserController {
         this.userService = userService;
     }
 
+    @GetMapping(value = "/")
+    public String printWelcome(ModelMap model) {
+        return "redirect:users";
+    }
+
+
     @GetMapping(value = "/users")
     public String getAllUsers(ModelMap model,
                               @RequestParam(value = "count", required = false, defaultValue = "100") Integer count) {
